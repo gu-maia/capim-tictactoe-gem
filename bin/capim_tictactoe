@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'capim_tictactoe'
+
+Capimtictactoe.start
