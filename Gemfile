@@ -3,5 +3,5 @@
 source 'https://rubygems.org'
 
 gem 'rainbow'
-gem 'rspec'
 gem 'rake'
+gem 'rspec'

@@ -1,0 +1,15 @@
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 500
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Lint/SuppressedException:
+  Enabled: false

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_relative '../spec_helper'
 
 RSpec.describe AsciiArt do
-
   it 'should be a constant' do
     expect(AsciiArt::GRASS).to be_a(String)
     expect(AsciiArt::GREEN_GRASS).to be_a(String)

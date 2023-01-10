@@ -8,7 +8,7 @@ module Evaluator
     end
 
     spot = get_best_move(board, human_marker, computer_marker)
-    spot = board.grid.marked?(spot) ? nil : board.grid.spot_marker(spot, computer_marker)
+    board.grid.marked?(spot) ? nil : board.grid.spot_marker(spot, computer_marker)
   end
 
   def get_best_move(board, human_marker, computer_marker)

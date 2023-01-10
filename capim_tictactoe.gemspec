@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |spec|
   spec.name                  = 'capim_tictactoe'
   spec.version               = '0.0.3'
-  spec.executables << "capim_tictactoe"
+  spec.executables << 'capim_tictactoe'
   spec.authors               = ['Gustavo Maia']
   spec.email                 = ['contato@gustaavomaia.com']
   spec.summary               = 'A tictactoe CLI app'
@@ -15,6 +17,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rainbow'
 
-  spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rubocop'
 end

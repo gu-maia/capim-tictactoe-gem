@@ -17,12 +17,11 @@ RSpec.describe Board do
     board_valid_column.grid.spot_marker(0, 'X')
     board_valid_column.grid.spot_marker(3, 'X')
     board_valid_column.grid.spot_marker(6, 'X')
-    
+
     board_valid_diagonal.grid.spot_marker(0, 'X')
     board_valid_diagonal.grid.spot_marker(4, 'X')
     board_valid_diagonal.grid.spot_marker(8, 'X')
   end
-
 
   context 'initialize' do
     it 'should instantiate spots' do
@@ -89,11 +88,10 @@ RSpec.describe Board do
   end
 
   context '#game_over?' do
-
     it 'has no valid rows' do
       expect(board.game_over?).to eq(false)
     end
-    
+
     it 'has a valid row' do
       expect(board_valid_row.game_over?).to eq(true)
     end
@@ -101,15 +99,15 @@ RSpec.describe Board do
     it 'has a valid column' do
       expect(board_valid_column.game_over?).to eq(true)
     end
-    
+
     it 'has a valid diagonal' do
       expect(board_valid_diagonal.game_over?).to eq(true)
     end
   end
 
   context '#tie?' do
-    let(:tied_board) { Board.new } 
-    
+    let(:tied_board) { Board.new }
+
     it 'is not a tie' do
       expect(board.tie?).to eq(false)
     end
@@ -126,26 +124,26 @@ RSpec.describe Board do
       expect(board_valid_row.tie?).to eq(false)
     end
 
-#    it 'is tied' do
-#      # X | O | X
-#      # O | O | X
-#      # X | X | O
-#      #
-#      # The method checks for colored input. x_marker and o_marker are there so i dont need to include the Color module.
-#      x_marker = "\e[32mX\e[0m"
-#      o_marker = "\e[34mO\e[0m"
-#
-#      tied_board.grid.spot_marker(0, x_marker)
-#      tied_board.grid.spot_marker(1, o_marker)
-#      tied_board.grid.spot_marker(2, x_marker)
-#      tied_board.grid.spot_marker(3, o_marker)
-#      tied_board.grid.spot_marker(4, o_marker)
-#      tied_board.grid.spot_marker(5, x_marker)
-#      tied_board.grid.spot_marker(6, x_marker)
-#      tied_board.grid.spot_marker(7, x_marker)
-#      tied_board.grid.spot_marker(8, o_marker)
-#
-#      expect(tied_board.tie?).to be_truthy
-#    end
+    #    it 'is tied' do
+    #      # X | O | X
+    #      # O | O | X
+    #      # X | X | O
+    #      #
+    #      # The method checks for colored input. x_marker and o_marker are there so i dont need to include the Color module.
+    #      x_marker = "\e[32mX\e[0m"
+    #      o_marker = "\e[34mO\e[0m"
+    #
+    #      tied_board.grid.spot_marker(0, x_marker)
+    #      tied_board.grid.spot_marker(1, o_marker)
+    #      tied_board.grid.spot_marker(2, x_marker)
+    #      tied_board.grid.spot_marker(3, o_marker)
+    #      tied_board.grid.spot_marker(4, o_marker)
+    #      tied_board.grid.spot_marker(5, x_marker)
+    #      tied_board.grid.spot_marker(6, x_marker)
+    #      tied_board.grid.spot_marker(7, x_marker)
+    #      tied_board.grid.spot_marker(8, o_marker)
+    #
+    #      expect(tied_board.tie?).to be_truthy
+    #    end
   end
 end
