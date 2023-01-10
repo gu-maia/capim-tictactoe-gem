@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require_relative 'lib/version'
+
 Gem::Specification.new do |spec|
   spec.name                  = 'capim_tictactoe'
-  spec.version               = '0.0.92'
+  spec.version               = Capimtictactoe::VERSION
   spec.executables << 'capim_tictactoe'
   spec.authors               = ['Gustavo Maia']
   spec.email                 = ['contato@gustaavomaia.com']
