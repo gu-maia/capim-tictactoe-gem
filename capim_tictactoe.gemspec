@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name                  = 'capim_tictactoe'
-  spec.version               = '0.0.1'
+  spec.version               = '0.0.2'
   spec.executables << "capim_tictactoe"
   spec.authors               = ['Gustavo Maia']
   spec.email                 = ['contato@gustaavomaia.com']
@@ -12,7 +12,6 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.5.0'
 
   spec.files = Dir['lib/**/*.rb']
-  spec.files = Dir['bin/*']
 
   spec.add_dependency 'rainbow'
 
