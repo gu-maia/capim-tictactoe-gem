@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name                  = 'capim_tictactoe'
-  spec.version               = '0.0.2'
+  spec.version               = '0.0.3'
   spec.executables << "capim_tictactoe"
   spec.authors               = ['Gustavo Maia']
   spec.email                 = ['contato@gustaavomaia.com']
