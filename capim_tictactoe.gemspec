@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name                  = 'capim_tictactoe'
-  spec.version               = '0.0.7'
+  spec.version               = '0.0.8'
   spec.executables << 'capim_tictactoe'
   spec.authors               = ['Gustavo Maia']
   spec.email                 = ['contato@gustaavomaia.com']
