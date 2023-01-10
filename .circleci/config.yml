@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Install locally
           command: gem install --development *.gem
-      -run:
+      - run:
           name: Publish gem
           command: |
             mkdir -p ~/.gem
