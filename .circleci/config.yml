@@ -21,15 +21,15 @@ jobs:
           name: Build gem
           command: gem build capim_tictactoe.gemspec
       - run:
-        name: Install locally
-        command: gem install --development *.gem
+          name: Install locally
+          command: gem install --development *.gem
       -run:
-        name: Publish gem
-        command: |
-          mkdir -p ~/.gem
-          echo -e "---\r\n:rubygems_api_key: $RUBY_GEM_API_KEY" > ~/.gem/credentials
-          chmod 0600 ~/.gem/credentials
-          gem push capim_tictactoe*.gem
+          name: Publish gem
+          command: |
+            mkdir -p ~/.gem
+            echo -e "---\r\n:rubygems_api_key: $RUBY_GEM_API_KEY" > ~/.gem/credentials
+            chmod 0600 ~/.gem/credentials
+            gem push capim_tictactoe*.gem
 workflows:
   version: 2
   test-and-deploy:
