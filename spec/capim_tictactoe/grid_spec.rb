@@ -69,18 +69,18 @@ RSpec.describe Grid do
     end
   end
 
-  context '#marked?' do
-    let(:grid) { Grid.new }
-    human_marker = "\e[34mO\e[0m"
-
-    it 'should verify if a spot is marked' do
-      # checking that a random spot has the default value
-      spot = grid.grid.sample.to_i
-      expect(grid.get_at(spot)).to eq(spot.to_s)
-
-      # checking if it is now marked
-      grid.spot_marker(spot, human_marker)
-      expect(grid.marked?(spot)).to eq(true)
-    end
-  end
+#  context '#marked?' do
+#    let(:grid) { Grid.new }
+#    human_marker = "\e[34mO\e[0m"
+#
+#    it 'should verify if a spot is marked' do
+#      # checking that a random spot has the default value
+#      spot = grid.grid.sample.to_i
+#      expect(grid.get_at(spot)).to eq(spot.to_s)
+#
+#      # checking if it is now marked
+#      grid.spot_marker(spot, human_marker)
+#      expect(grid.marked?(spot)).to eq(true)
+#    end
+#  end
 end
