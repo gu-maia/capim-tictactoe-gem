@@ -10,7 +10,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: Run tests
-          command: rake spec
+          command: bundle exec rake spec
 workflows:
   version: 2
   deploy:
