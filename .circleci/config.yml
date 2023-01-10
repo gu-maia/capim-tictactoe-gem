@@ -21,9 +21,6 @@ jobs:
           name: Build gem
           command: gem build capim_tictactoe.gemspec
       - run:
-          name: Install locally
-          command: gem install --development *.gem
-      - run:
           name: Publish gem
           command: |
             mkdir -p ~/.gem
