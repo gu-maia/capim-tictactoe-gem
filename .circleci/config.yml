@@ -22,7 +22,7 @@ jobs:
           command: gem build capim_tictactoe.gemspec
       - run:
           name: Publish gem
-          command: gem push capim_tictactoe*.gem -k $GEM_HOST_API_KEY
+          command: bundle exec rake release 
 workflows:
   version: 2
   test-and-deploy:

@@ -15,6 +15,8 @@ Gem::Specification.new do |spec|
   spec.platform              = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.5.0'
 
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
+
   spec.files = Dir['lib/**/*.rb']
 
   spec.add_dependency 'rainbow'
