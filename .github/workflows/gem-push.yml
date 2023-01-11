@@ -20,7 +20,9 @@ jobs:
         run: bundle install
       - name: Run tests
         run: bundle exec rake spec
-      - name: Git
+      - name: Ignore runtime Gemlock
+        run: echo -e "Gemfile.lock" > .gitignore
+      - name: Git status
         run: git status
   build:
     runs-on: ubuntu-latest
