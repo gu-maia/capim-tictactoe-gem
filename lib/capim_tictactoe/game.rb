@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Game
+  require 'optparse'
   require_relative 'board'
   require_relative 'evaluator'
   require_relative 'color'
@@ -16,6 +17,7 @@ class Game
     @board = Board.new
     @computer = x_marker
     @human = o_marker
+    parse_args
   end
 
   def start_game
@@ -24,7 +26,7 @@ class Game
     until @board.game_over? || @board.tie?
       fetch_human_spot(@board, @human)
 
-      eval_board(@board, @human, @computer) unless @board.game_over? || @board.tie?
+      eval_board(@board, @human, @computer, @options[:game_mode]) unless @board.game_over? || @board.tie?
       @board.grid.display
     end
 

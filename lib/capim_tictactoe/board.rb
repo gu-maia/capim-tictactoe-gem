@@ -33,7 +33,7 @@ class Board
   end
 
   def game_over?(spots = @grid.spots)
-    valid_line?(@grid.rows(spots)) || valid_line?(@grid.columns(spots)) || valid_line?(@grid.diagonals)
+    valid_line?(@grid.rows(spots)) || valid_line?(@grid.columns(spots)) || valid_line?(@grid.diagonals(spots))
   end
 
   def tie?

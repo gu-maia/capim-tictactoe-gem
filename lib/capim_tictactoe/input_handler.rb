@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rainbow'
 
 module InputHandler
   def fetch_human_spot(board, human_marker)
@@ -14,6 +15,25 @@ module InputHandler
     board.grid.spot_marker(spot, human_marker)
   end
 
+  def parse_args
+    @options = {ascii_art: true, jokes:true}
+    OptionParser.new do |opts|
+      opts.banner = Rainbow("Usage: capim_tictactoe [options], the game will default to challenging mode.").red
+
+      opts.on('-e', '--easy', "Runs the game in easy mode.") do
+        @options[:game_mode] = :easy
+      end 
+      opts.on('-c', '--challenging', "Runs the game in hard mode.") do
+        @options[:game_mode] = :hard
+      end 
+      opts.on('-a', '--noart', "Runs the game without ASCII art.") do
+        @options[:ascii_art] = false
+      end 
+      opts.on('-j', '--nojokes', "Runs the game without the silly lines.") do
+        @options[:jokes] = false 
+      end 
+    end.parse!
+  end
   private
 
   # to_i converts 'non integer' strings to 0: 'a'.to_i => 0.
