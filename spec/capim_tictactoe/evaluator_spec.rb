@@ -6,12 +6,13 @@ RSpec.describe Evaluator do
   let(:board) { Board.new }
   let(:human_marker) { 'O' }
   let(:computer_marker) { 'X' }
+  let(:random_game_mode) { [:easy, :hard].sample  }
 
   context '#eval_board' do
     it 'receives a board with unmarked center, it should mark the center and return' do
       expect(board.center_marked?).to eq(false)
 
-      evaluator.eval_board(board, human_marker, computer_marker)
+      evaluator.eval_board(board, human_marker, computer_marker, random_game_mode)
 
       expect(board.center_marked?).to eq(true)
     end
@@ -20,7 +21,7 @@ RSpec.describe Evaluator do
   context '#get_best_move' do
     let(:player_about_to_win) { Board.new }
 
-    it 'should mark the spot that would make the player win' do
+    it 'should mark the spot that would make the player win, when in hard_mode' do
       # O | O | 2
       # 3 | X | 5
       # 6 | 7 | 8
@@ -30,7 +31,7 @@ RSpec.describe Evaluator do
 
       expect(player_about_to_win.grid.marked?(2)).to eq(false)
 
-      evaluator.eval_board(player_about_to_win, human_marker, computer_marker)
+      evaluator.eval_board(player_about_to_win, human_marker, computer_marker, :hard)
 
       expect(player_about_to_win.grid.get_at(2)).to eq(computer_marker)
     end
@@ -48,7 +49,7 @@ RSpec.describe Evaluator do
 
       expect(player_about_to_win.grid.marked?(7)).to eq(false)
 
-      evaluator.eval_board(computer_about_to_win, human_marker, computer_marker)
+      evaluator.eval_board(computer_about_to_win, human_marker, computer_marker, random_game_mode)
 
       expect(computer_about_to_win.grid.get_at(7)).to eq(computer_marker)
     end
@@ -64,7 +65,7 @@ RSpec.describe Evaluator do
       no_best_move.grid.spot_marker(3, computer_marker)
 
       available_spots = no_best_move.available_spots
-      random_move = evaluator.get_best_move(no_best_move, human_marker, computer_marker)
+      random_move = evaluator.get_best_move(no_best_move, human_marker, computer_marker, random_game_mode)
 
       expect(available_spots).to include(random_move.to_s)
     end
