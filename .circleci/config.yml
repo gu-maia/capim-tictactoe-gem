@@ -24,6 +24,7 @@ jobs:
           name: Publish gem
           command: |
             git status
+            echo -e "Gemfile.lock" > .gitignore
             bundle exec rake release 
 workflows:
   version: 2
