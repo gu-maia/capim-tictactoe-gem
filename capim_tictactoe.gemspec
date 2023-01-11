@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.platform              = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.5.0'
 
-  spec.metadata["allowed_push_host"] = "https://rubygems.pkg.github.com/itsmaia"
+  spec.metadata["github_repo"] = "ssh://github.com/itsmaia/capimtictactoe-gem"
 
   spec.files = Dir['lib/**/*.rb']
 
