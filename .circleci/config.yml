@@ -22,7 +22,9 @@ jobs:
           command: gem build capim_tictactoe.gemspec
       - run:
           name: Publish gem
-          command: bundle exec rake release 
+          command: |
+            git status
+            bundle exec rake release 
 workflows:
   version: 2
   test-and-deploy:
