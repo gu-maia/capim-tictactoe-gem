@@ -1,5 +1,14 @@
 > The original, unfactored code can be found [here.](https://gist.github.com/itsmaia/765eff3ebee6c22ceab2850f1e587ef1)
 
+<p align="center">
+    <a href="https://img.shields.io/badge/simplecov-86%25-green" alt="Simplecov">
+        <img src="https://img.shields.io/badge/simplecov-86%25-green" /></a>
+    <a href="https://img.shields.io/badge/version-1.0.1-green" alt="Version">
+        <img src="https://img.shields.io/badge/version-1.0.1-green" /></a>
+    <a href="https://img.shields.io/badge/build-passing-green" alt="Build">
+        <img src="https://img.shields.io/badge/build-passing-green" /></a>
+</p>
+
 Contents
 --------
 
