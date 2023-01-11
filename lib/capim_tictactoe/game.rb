@@ -30,6 +30,6 @@ class Game
       @board.grid.display
     end
 
-    puts 'Game over'
+    puts @board.tie? ? "I'ts a tie!" : 'Game over'
   end
 end
