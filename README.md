@@ -8,7 +8,7 @@ Contents
    - [Cloning](#cloning)
    - [Dependencies](#dependencies)
    - [Running Tests](#tests)
-   - [Execute](#execute)
+   - [Usage](#usage)
 - [CI/CD](#ci/cd)
 - [Final Considerations](#final-considerations)
 
@@ -52,11 +52,31 @@ To run the test suite
 bundle exec rspec
 ```
 
-#### Execute
+#### Usage
 
-You can run the game with
-```ruby 
-capim_tictactoe
+You can see the list of options using the '-h' and '--help' flags:
+```
+capim_tictactoe --help
+```
+
+To remove the ASCII art, use the '-a', '--noart' flag:
+```
+capim_tictactoe --noart
+```
+
+To remove the randomized jokes, use the '-j', '--nojokes' flag:
+```
+capim_tictactoe --nojokes
+```
+
+If you wish to play on easy mode, use the '-e', '--easy' flag:
+```
+capim_tictactoe --easy
+```
+
+You can combine the flags however you want, like:
+```
+capim_tictactoe -a --easy
 ```
 
 CI/CD
