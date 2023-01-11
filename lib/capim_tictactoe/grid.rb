@@ -31,8 +31,8 @@ class Grid
     rows(spots).to_a.transpose
   end
 
-  def diagonals
-    [[@grid[0], @grid[4], @grid[8]], [@grid[2], @grid[4], @grid[6]]]
+  def diagonals(spots = grid)
+    [[spots[0], spots[4], spots[8]], [spots[2], spots[4], spots[6]]]
   end
 
   def spot_marker(spot, marker)

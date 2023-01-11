@@ -51,6 +51,9 @@ RSpec.describe Grid do
   end
 
   context 'diagonals' do
+    it 'receives a set of spots as a parameter' do
+      expect(grid_instance.diagonals(['X', '-', 'X', '-', 'X', '-', 'X', '-', 'X'])).to eq([%w[X X X], %w[X X X]])
+    end
     it 'returns the diagonals' do
       expect(grid_instance.diagonals).to eq([%w[X Y Z], %w[X Y Z]])
     end
