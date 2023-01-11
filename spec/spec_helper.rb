@@ -1,4 +1,6 @@
-# frozen_string_literal: true
+require 'simplecov'
+
+SimpleCov.start
 
 require_relative '../lib/capim_tictactoe/silly_line'
 require_relative '../lib/capim_tictactoe/ascii_art'
