@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rainbow'
 
 module InputHandler
@@ -16,21 +17,22 @@ module InputHandler
   end
 
   def parse_args
-    @options = {game_mode: :hard, ascii_art: true, jokes:true}
+    @options = { game_mode: :hard, ascii_art: true, jokes: true }
     OptionParser.new do |opts|
-      opts.banner = Rainbow("Usage: capim_tictactoe [options], the game will default to challenging mode.").red
+      opts.banner = Rainbow('Usage: capim_tictactoe [options], the game will default to challenging mode.').red
 
-      opts.on('-e', '--easy', "Runs the game in easy mode.") do
+      opts.on('-e', '--easy', 'Runs the game in easy mode.') do
         @options[:game_mode] = :easy
-      end 
-      opts.on('-a', '--noart', "Runs the game without ASCII art.") do
+      end
+      opts.on('-a', '--noart', 'Runs the game without ASCII art.') do
         @options[:ascii_art] = false
-      end 
-      opts.on('-j', '--nojokes', "Runs the game without the silly lines.") do
-        @options[:jokes] = false 
-      end 
+      end
+      opts.on('-j', '--nojokes', 'Runs the game without the silly lines.') do
+        @options[:jokes] = false
+      end
     end.parse!
   end
+
   private
 
   # to_i converts 'non integer' strings to 0: 'a'.to_i => 0.

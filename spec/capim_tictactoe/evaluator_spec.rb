@@ -6,7 +6,7 @@ RSpec.describe Evaluator do
   let(:board) { Board.new }
   let(:human_marker) { 'O' }
   let(:computer_marker) { 'X' }
-  let(:random_game_mode) { [:easy, :hard].sample  }
+  let(:random_game_mode) { %i[easy hard].sample }
 
   context '#eval_board' do
     it 'receives a board with unmarked center, it should mark the center and return' do
