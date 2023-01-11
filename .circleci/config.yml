@@ -24,7 +24,7 @@ jobs:
           name: Publish gem
           command: |
             mkdir -p ~/.gem
-            echo -e ":rubygems_api_key: 123123" > ~/.gem/credentials
+            echo -e ":rubygems_api_key: $TEST_API_KEY" > ~/.gem/credentials
             cat ~/.gem/credentials
             chmod 0600 ~/.gem/credentials
             gem push capim_tictactoe*.gem
