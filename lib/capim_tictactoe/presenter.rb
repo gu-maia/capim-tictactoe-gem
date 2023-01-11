@@ -8,7 +8,7 @@ module Presenter
   GREEN_GRASS = AsciiArt::GREEN_GRASS
 
   def present_game
-    print GREEN_GRASS if @options[:ascii_art]
+    print "#{GREEN_GRASS}\n" if @options[:ascii_art]
     puts "\n#{SILLY_LINE}\n\n" if @options[:jokes]
     @board.grid.display
     puts 'Enter [0-8]'
