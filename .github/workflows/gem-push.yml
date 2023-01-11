@@ -25,7 +25,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      #- uses: actions/checkout@v3
+      - name: set up secret file
+        env:
+         GEM_HOST_API_KEY: "${{secrets.GEM_HOST_API_KEY}}"
+        run: |
+         echo -e "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+         echo -e "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > sec.txt
+         echo sec.txt
       - name: publish gem
         run: |
          mkdir -p $HOME/.gem
@@ -34,11 +41,5 @@ jobs:
          echo -e "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
          gem build *.gemspec
          gem push *.gem
-      - name: set up secret file
-        env:
-         GEM_HOST_API_KEY: "${{secrets.GEM_HOST_API_KEY}}"
-        run: |
-         echo -e "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
-         echo -e "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > sec.txt
-         echo sec.txt
+
         
