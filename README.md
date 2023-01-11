@@ -35,6 +35,8 @@ gem install capim_tictactoe
 
 #### Tests
 
+> ⚠️  The tests related to the Color class are commented out. When running on the github environment the color codes are rendered as colored output, making the tests fail. I don't have the time to find a fix for that now.
+
 Clone the repository
 ```
 git clone https://github.com/itsmaia/capim-tictactoe
