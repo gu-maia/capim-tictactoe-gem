@@ -11,14 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Git status
-        run: git status
-
       - uses: actions/checkout@v3
 
       - name: Release Gem
         uses: cadwallion/publish-rubygems-action@master
+        run: git status
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
           RELEASE_COMMAND: rake release
+        
