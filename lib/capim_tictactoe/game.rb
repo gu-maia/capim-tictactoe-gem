@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Game
-  require 'optparse'
   require_relative 'board'
   require_relative 'evaluator'
   require_relative 'color'

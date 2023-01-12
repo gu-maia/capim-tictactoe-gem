@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rainbow'
+require 'optparse'
 
 module InputHandler
   def fetch_human_spot(board, human_marker)
